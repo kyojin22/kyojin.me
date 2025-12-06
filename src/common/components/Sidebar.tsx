@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from "react";
+import { FC, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
   TbBrandGithub,
@@ -8,6 +8,7 @@ import {
 } from "react-icons/tb";
 import { RiCloseLine } from "react-icons/ri";
 import { handleDownload } from "@/common/utils";
+import { useOnClickOutside } from "../hooks/useOnClickOutside";
 
 interface SidebarInterface {
   sidebar: boolean;
@@ -35,26 +36,7 @@ const sidebarLinks = [
 export const Sidebar: FC<SidebarInterface> = ({ sidebar, toggleSidebar }) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        sidebarRef.current &&
-        !sidebarRef.current.contains(event.target as Node)
-      ) {
-        toggleSidebar();
-      }
-    };
-
-    if (sidebar) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [sidebar, toggleSidebar]);
+  useOnClickOutside(sidebarRef, toggleSidebar, sidebar);
 
   return (
     <aside
@@ -68,7 +50,7 @@ export const Sidebar: FC<SidebarInterface> = ({ sidebar, toggleSidebar }) => {
           <div className="mb-10 flex items-center justify-between">
             <NavLink to="/">
               <h2 className="hover:text-black dark:hover:text-main text-lg">
-                &lt;kyojin/&gt;
+                &lt;kyo/&gt;
               </h2>
             </NavLink>
             <button onClick={toggleSidebar}>

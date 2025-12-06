@@ -12,7 +12,7 @@ export default function App() {
   };
 
   return (
-    <div className="main-layout min-h-screen flex flex-col 2xl:justify-start relative">
+    <div className="min-h-screen flex flex-col 2xl:justify-start relative">
       <Navbar toggleSidebar={toggleSidebar} />
       <Sidebar sidebar={sidebar} toggleSidebar={toggleSidebar} />
       <Router />

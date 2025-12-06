@@ -41,7 +41,7 @@ export const Navbar: FC<NavbarInterface> = ({ toggleSidebar }) => {
     <nav className="container px-5 md:px-0 py-5 w-full flex items-center justify-between text-grey">
       <NavLink to="/">
         <h2 className="hover:text-black dark:hover:text-main text-lg md:text-xl">
-          &lt;kyojin/&gt;
+          &lt;kyo/&gt;
         </h2>
       </NavLink>
 
