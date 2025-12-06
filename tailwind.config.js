@@ -11,7 +11,7 @@ export default {
           md: "100%",
           lg: "720px",
           xl: "720px",
-          "2xl": "900px",
+          "2xl": "720px",
         },
       },
       colors: {
