@@ -1,47 +1,24 @@
-@import url("./fonts.css");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --font-josefin: "Josefin Sans", sans-serif;
+  --font-kalam: "Kalam", cursive;
+}
+
+.font-kalam {
+  font-family: var(--font-kalam);
+}
+
 ::selection {
-  @apply bg-main text-black;
+  @apply bg-red-500 text-black;
 }
 
 body {
-  @apply dark:bg-black;
+  @apply bg-black;
 }
 
 * {
-  font-family: "JetBrainsMonoNerdFont", sans-serif;
-  @apply duration-300;
+  font-family: var(--font-josefin);
 }
-
-.skeleton {
-  @apply animate-pulse rounded-md bg-zinc-900/10 dark:bg-zinc-50/10;
-}
-
-.icon {
-  @apply hover:text-black dark:hover:text-main text-4xl w-6 h-6;
-}
-
-.project-wrap {
-  @apply p-5 rounded-lg flex flex-col border-2 hover:shadow-lg border-gray-100 hover:border-gray-300 hover:shadow-gray-300 dark:border-gray-900 dark:hover:border-gray-700 dark:hover:shadow-gray-700 duration-500 cursor-pointer;
-}
-
-::-webkit-scrollbar {
-  @apply w-1;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-white dark:bg-black;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply rounded-lg bg-gray-100 hover:bg-gray-300 dark:bg-gray-900 dark:hover:bg-gray-700;
-}
-
-.main-layout {
-  background: radial-gradient(circle at bottom right, rgba(67, 255, 175, 0.3) 1%, transparent 75%);
-}
-
